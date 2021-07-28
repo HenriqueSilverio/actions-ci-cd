@@ -3,7 +3,7 @@ name: Deploy Staging
 on:
   workflow_run:
     workflows: ["Build"]
-    branches: [main]
+    branches: [staging]
     types:
       - completed
 
@@ -15,5 +15,5 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          ref: main
+          ref: staging
           fetch-depth: 0

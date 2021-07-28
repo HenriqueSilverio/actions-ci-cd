@@ -3,7 +3,7 @@ name: Deploy Develop
 on:
   workflow_run:
     workflows: ["Build"]
-    branches: [main]
+    branches: [develop]
     types:
       - completed
 
@@ -15,5 +15,5 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          ref: main
+          ref: develop
           fetch-depth: 0
