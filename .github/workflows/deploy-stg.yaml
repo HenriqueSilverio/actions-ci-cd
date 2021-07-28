@@ -1,0 +1,17 @@
+name: Deploy Staging
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy-stg:
+    name: Deploy Staging
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: main
+          fetch-depth: 0
